@@ -9,9 +9,13 @@
 
 <header class="header">
     <h1>Sudipta Kumar Sardar</h1>
-    <p>Software Professional</p>
+   <p class="typing"></p>
     <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
 </header>
+<div class="hero-buttons">
+    <a href="#" class="hire-btn">Hire Me</a>
+    <a href="resume.pdf" class="resume-btn" download>Download CV</a>
+</div>
 
 <main class="container">
 
@@ -62,21 +66,57 @@
         <h2>Contact</h2>
         <p>Email: <strong>sudiptakumarsardar01@gmail.com</strong></p>
     </section>
-    <section>
-    <a href="resume.pdf" class="resume-btn" download>
-        Download Resume
-    </a>
-</section>
+
+    <div class="social-links">
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a href="https://github.com" target="_blank">GitHub</a>
+</div>
 
 </main>
 
 <footer class="footer">
     <p>© 2026 Sudipta Kumar Sardar. All rights reserved.</p>
 </footer>
-<script>
+<<script>
 function toggleTheme() {
     document.body.classList.toggle("light-mode");
 }
+
+/* Typing Effect */
+
+const roles = [
+    "Software Developer",
+    "Full Stack Engineer",
+    "Problem Solver",
+    "Continuous Learner"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let currentText = "";
+let isDeleting = false;
+const typingElement = document.querySelector(".typing");
+
+function typeEffect() {
+    currentText = roles[roleIndex];
+
+    if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex--);
+    } else {
+        typingElement.textContent = currentText.substring(0, charIndex++);
+    }
+
+    if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => isDeleting = true, 1000);
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    setTimeout(typeEffect, isDeleting ? 50 : 100);
+}
+
+typeEffect();
 </script>
 </body>
 </html>
