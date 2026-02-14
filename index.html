@@ -10,6 +10,7 @@
 <header class="header">
     <h1>Sudipta Kumar Sardar</h1>
     <p>Software Professional</p>
+    <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
 </header>
 
 <main class="container">
@@ -61,12 +62,21 @@
         <h2>Contact</h2>
         <p>Email: <strong>sudiptakumarsardar01@gmail.com</strong></p>
     </section>
+    <section>
+    <a href="resume.pdf" class="resume-btn" download>
+        Download Resume
+    </a>
+</section>
 
 </main>
 
 <footer class="footer">
     <p>© 2026 Sudipta Kumar Sardar. All rights reserved.</p>
 </footer>
-
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+}
+</script>
 </body>
 </html>

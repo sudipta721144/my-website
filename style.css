@@ -1,17 +1,16 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f7fa;
-    color: #1f2933;
+    background: linear-gradient(135deg, #020617, #0b1f3a);
+    color: #e5e7eb;
 }
 
 .header {
-    background-color: #0b1f3a;
+    background: linear-gradient(135deg, #020617, #0f2a44);
     color: #ffffff;
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
-
 .header h1 {
     margin: 0;
     font-size: 34px;
@@ -26,12 +25,11 @@ body {
 .container {
     max-width: 900px;
     margin: 40px auto;
-    background-color: #ffffff;
+    background-color: #020617;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
-
 .profile-pic {
     display: block;
     margin: 0 auto 30px;
@@ -49,9 +47,9 @@ section {
 h2 {
     font-size: 22px;
     margin-bottom: 12px;
-    border-bottom: 2px solid #e5e7eb;
+    border-bottom: 2px solid #1e3a8a;
     padding-bottom: 6px;
-    color: #0b1f3a;
+    color: #93c5fd;
 }
 
 p {
@@ -71,7 +69,95 @@ li {
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #0b1f3a;
-    color: #cbd5e1;
+    background-color: #020617;
+    color: #9ca3af;
     font-size: 14px;
+}
+p, li {
+    color: #d1d5db;
+}
+.theme-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.theme-btn:hover {
+    background-color: #2563eb;
+}
+.light-mode {
+    background: #f5f7fa;
+    color: #1f2933;
+}
+
+.light-mode .container {
+    background-color: #ffffff;
+}
+
+.light-mode h2 {
+    color: #0b1f3a;
+}
+
+.light-mode p,
+.light-mode li {
+    color: #1f2933;
+}
+.resume-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #1e40af;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.resume-btn:hover {
+    background-color: #2563eb;
+}
+/* Smooth fade-in animation */
+section {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.resume-btn {
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #0f172a);
+    transform: scale(1.05);
+}
+/* Smooth hover effect for headings */
+h2 {
+    transition: color 0.3s ease;
+}
+
+h2:hover {
+    color: #60a5fa;
 }
